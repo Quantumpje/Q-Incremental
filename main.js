@@ -47,7 +47,7 @@ function cooldown_PointsButton() {
 
 function cooldown_UpgradesButton() {
     document.getElementById("UpgradesButton").disabled = true
-    setTimeout(function () { document.getElementById("UpgradesButton").disabled = false }, 300)
+    setTimeout(function () { document.getElementById("UpgradesButton").disabled = false }, 100)
 }
 
 
