@@ -1,0 +1,27 @@
+.Currency h3 {
+    text-align: center;
+    font-size: 5vw;
+    margin: 0;
+}
+
+.Currency p {
+    font-size: 3vw;
+    text-align: center;
+    margin: 1vw;
+}
+
+.Buttons {
+    text-align: center;
+}
+
+.Buttons h3 {
+    text-align: center;
+    font-size: 5vw;
+    margin: 0;
+}
+
+.Buttons button {
+    font-size: 4vw;
+    width: 50%;
+    margin: 1vw;
+}
