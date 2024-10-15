@@ -42,7 +42,7 @@ function display_UpgradesButton() {
 
 function cooldown_PointsButton() {
     document.getElementById("PointsButton").disabled = true
-    setTimeout(function () { document.getElementById("PointsButton").disabled = false }, 300)
+    setTimeout(function () { document.getElementById("PointsButton").disabled = false }, 100)
 }
 
 function cooldown_UpgradesButton() {
