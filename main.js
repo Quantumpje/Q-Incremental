@@ -3,6 +3,7 @@ var saveData = {
     upgrades: 0,
     update: 0,
 }
+var defSave = saveData
 
 
 var savegame = JSON.parse(localStorage.getItem("Quantumpje-IncrementalSave"))
@@ -23,20 +24,25 @@ var saveGameLoop = window.setInterval(function () {
 }, 2500)
 
 
+function formatNum(num) {
+    return Math.floor(num * 1000) / 1000
+}
+
+
 function display_Points() {
-    document.getElementById("Points").innerHTML = `${saveData.points} Points`
+    document.getElementById("Points").innerHTML = `${formatNum(saveData.points)} Points`
 }
 
 function display_Upgrades() {
-    document.getElementById("Upgrades").innerHTML = `${saveData.upgrades} Upgrades`
+    document.getElementById("Upgrades").innerHTML = `${formatNum(saveData.upgrades)} Upgrades`
 }
 
 function display_PointsButton() {
-    document.getElementById("PointsButton").innerHTML = `${formula_points()} Points Button`
+    document.getElementById("PointsButton").innerHTML = `${formatNum(formula_points())} Points Button`
 }
 
 function display_UpgradesButton() {
-    document.getElementById("UpgradesButton").innerHTML = `${formula_upgrade_P()} Points >>> ${formula_upgrade_U()} Upgrades Button`
+    document.getElementById("UpgradesButton").innerHTML = `${formatNum(formula_upgrade_P())} Points >>> ${formatNum(formula_upgrade_U())} Upgrades Button`
 }
 
 
@@ -52,14 +58,14 @@ function cooldown_UpgradesButton() {
 
 
 function formula_points() {
-    return 1 + saveData.upgrades
+    return 1 * 1.25 ** saveData.upgrades
 }
 
 function formula_upgrade_U() {
     return 1
 }
 function formula_upgrade_P() {
-    return 10 + 5 * saveData.upgrades
+    return 10 * 1.35 ** saveData.upgrades
 }
 
 
@@ -88,6 +94,13 @@ function Upgrade() {
 
         cooldown_UpgradesButton()
     }
+}
+
+
+function DelSave() {
+    saveData = defSave
+    localStorage.setItem("Quantumpje-IncrementalSave", JSON.stringify(saveData))
+    location.reload()
 }
 
 
