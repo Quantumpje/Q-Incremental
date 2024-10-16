@@ -25,7 +25,10 @@ var saveGameLoop = window.setInterval(function () {
 
 
 function formatNum(num) {
-    return Math.floor(num * 1000) / 1000
+    if (num >= 1000) {
+        return num.toExponential(3)
+    }
+    return (Math.floor(num * 1000) / 1000)
 }
 
 
