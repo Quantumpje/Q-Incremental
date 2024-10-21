@@ -81,21 +81,21 @@ function cooldown_BuyAutoClickerButton() {
 
 
 function formula_points() {
-    return saveData.upgrades > 1 ? 1 * 1.25 ** saveData.upgrades : 1
+    return saveData.upgrades >= 1 ? 1 * 1.25 ** saveData.upgrades : 1
 }
 
 function formula_upgrade_U() {
     return 1
 }
 function formula_upgrade_P() {
-    return saveData.upgrades > 1 ? 10 * 1.35 ** saveData.upgrades : 10
+    return saveData.upgrades >= 1 ? 10 * 1.35 ** saveData.upgrades : 10
 }
 
 function formula_buyautoclicker_CL() {
     return 1
 }
 function formula_buyautoclicker_U() {
-    return saveData.autoclickers > 1 ? 8 * 1.25 ** (saveData.autoclickers) : 8
+    return saveData.autoclickers >= 1 ? 8 * 1.25 ** (saveData.autoclickers) : 8
 }
 
 
